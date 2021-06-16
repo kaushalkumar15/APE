@@ -311,7 +311,12 @@ img {
 input {
   margin: 1.2rem 0;
 }
-
+input:focus {
+  /* border: 1px solid #1670be;
+  box-shadow: 0 0 3px #1670be; */
+  outline-offset: 0px;
+  outline: none;
+}
 .form-text {
   display: block;
   margin-top: 0.3rem;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import { Pie, Bar, Line } from "react-chartjs-2";
+import { Pie, Bar, Line, PolarArea } from "react-chartjs-2";
 
 const Charts = () => {
   const [stuChartData, setStuChartData] = useState({});
@@ -91,6 +91,22 @@ const Charts = () => {
       </div>
       <div>
         <Bar
+          data={stuChartData ? stuChartData : []}
+          width={400}
+          height={500}
+          options={{ maintainAspectRatio: false }}
+        />
+      </div>
+      <div>
+        <Line
+          data={stuChartData ? stuChartData : []}
+          width={400}
+          height={500}
+          options={{ maintainAspectRatio: false }}
+        />
+      </div>
+      <div>
+        <PolarArea
           data={stuChartData ? stuChartData : []}
           width={400}
           height={500}

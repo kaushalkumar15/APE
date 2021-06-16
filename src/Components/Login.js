@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import img2 from "../images/3.png";
 import axios from "axios";
 
 const Home = () => {
@@ -25,44 +26,73 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="text-center"> Login </h1>
-      <div className="center">
-        <label>
-          Email:
-          <input
-            align="center"
-            type="Email"
-            name="uname"
-            onChange={e => {
-              setEmail(e.target.value);
-            }}
-            value={email}
+    <div
+      className="container bg-dark"
+      style={{ margin: "50px auto", borderRadius: "55px" }}
+    >
+      <h1 className="text-center" style={{ marginTop: "50px" }}>
+        {" "}
+        Login to APE{" "}
+      </h1>
+      <div className="grid-2" style={{ padding: "100px 0px" }}>
+        <div className="center ">
+          <img
+            src={img2}
+            className="img-fluid"
+            style={{ width: "250px", margin: "0px 10px" }}
           />
-        </label>
-        <label>
-          Password:
-          <input
-            align="center"
-            type="password"
-            name="upwd"
-            onChange={e => {
-              setPass(e.target.value);
-            }}
-            value={pass}
-          />
-        </label>
-        <Link to="/Reg">
-          <input className="btn btn-success" type="button" value="Register" />
-        </Link>
-        <Link to="/Home">
-          <input
-            className="btn btn-success"
-            type="button"
-            value="login"
-            onClick={handleLogin}
-          />
-        </Link>
+        </div>
+        <div>
+          <label>
+            Email:
+            <input
+              style={{
+                height: "30px",
+                borderRadius: "25px",
+                padding: "4px 8px"
+              }}
+              type="Email"
+              name="uname"
+              onChange={e => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              style={{
+                height: "30px",
+                borderRadius: "25px",
+                padding: "4px 8px"
+              }}
+              type="password"
+              name="upwd"
+              onChange={e => {
+                setPass(e.target.value);
+              }}
+              value={pass}
+            />
+          </label>
+          <Link to="/Reg">
+            <input
+              className="btn btn-success"
+              style={{ borderRadius: "25px", padding: "8px 50px" }}
+              type="button"
+              value="Register"
+            />
+          </Link>
+          <Link to="/Home">
+            <input
+              className="btn btn-success"
+              type="button"
+              style={{ borderRadius: "25px", padding: "8px 50px" }}
+              value="Login"
+              onClick={handleLogin}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );

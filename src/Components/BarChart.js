@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie, Bar, Line } from "react-chartjs-2";
+import { Pie, Bar, Line, PolarArea } from "react-chartjs-2";
 
 // const data = {
 //   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -62,16 +62,24 @@ const BarChart = ({ data }) => {
     <div>
       {data.labels && data.labels.length ? (
         <div>
-          <h1>Pie Chart</h1>
-          <div>
+          <h1 className="text-center my-2">Pie Chart</h1>
+          <div
+            className="bg-light"
+            style={{ padding: "50px", borderRadius: "25px" }}
+          >
             <Pie
               data={data ? data : []}
+              style={{ color: "white" }}
               width={400}
               height={500}
               options={{ maintainAspectRatio: false }}
             />
           </div>
-          <div>
+          <h1 className="text-center my-2">Bar Chart</h1>
+          <div
+            className="bg-light"
+            style={{ padding: "50px", borderRadius: "25px" }}
+          >
             <Bar
               data={data ? data : []}
               width={400}
@@ -79,7 +87,11 @@ const BarChart = ({ data }) => {
               options={{ maintainAspectRatio: false }}
             />
           </div>
-          <div>
+          <h1 className="text-center my-2">Line Chart</h1>
+          <div
+            className="bg-light"
+            style={{ padding: "50px", borderRadius: "25px" }}
+          >
             <Line
               data={data ? data : []}
               width={400}
@@ -87,7 +99,20 @@ const BarChart = ({ data }) => {
               options={{ maintainAspectRatio: false }}
             />
           </div>
-          <div>
+          <h1 className="text-center my-2">Radar Chart</h1>
+          <div
+            className="bg-light"
+            style={{ padding: "50px", borderRadius: "25px" }}
+          >
+            <PolarArea
+              data={data ? data : []}
+              style={{ color: "white" }}
+              width={400}
+              height={500}
+              options={{ maintainAspectRatio: false }}
+            />
+          </div>
+          <div className="my-2 bg-dark p-2" style={{ borderRadius: "25px" }}>
             <h3>{`Strongest Area - ${iMax}`}</h3>
             <h3>{`Weakest Area - ${iMin}`}</h3>
           </div>

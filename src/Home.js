@@ -8,7 +8,10 @@ const Home = () => {
   return (
     <div className="container">
       <h1 className="my-3 text-center">Academic Performance Evaluation</h1>
-      <div className="bg-dark p-2">
+      <div
+        className="bg-dark p-2"
+        style={{ margin: "50px auto", borderRadius: "55px" }}
+      >
         <FormComponent
           setMyData={setChartObj}
           setStuDetails={setStuDetails}
